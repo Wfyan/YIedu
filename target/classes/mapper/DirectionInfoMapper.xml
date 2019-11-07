@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yi.mapper.DirectionInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.yi.entity.DirectionInfo" >
+    <id column="did" property="did" jdbcType="INTEGER" />
+    <result column="dir_name" property="dirName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    did, dir_name
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yi.entity.DirectionInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from direction_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from direction_info
+    where did = #{did,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from direction_info
+    where did = #{did,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.yi.entity.DirectionInfoExample" >
+    delete from direction_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.yi.entity.DirectionInfo" >
+    insert into direction_info (did, dir_name)
+    values (#{did,jdbcType=INTEGER}, #{dirName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yi.entity.DirectionInfo" >
+    insert into direction_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="did != null" >
+        did,
+      </if>
+      <if test="dirName != null" >
+        dir_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="did != null" >
+        #{did,jdbcType=INTEGER},
+      </if>
+      <if test="dirName != null" >
+        #{dirName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.yi.entity.DirectionInfoExample" resultType="java.lang.Integer" >
+    select count(*) from direction_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update direction_info
+    <set >
+      <if test="record.did != null" >
+        did = #{record.did,jdbcType=INTEGER},
+      </if>
+      <if test="record.dirName != null" >
+        dir_name = #{record.dirName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update direction_info
+    set did = #{record.did,jdbcType=INTEGER},
+      dir_name = #{record.dirName,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yi.entity.DirectionInfo" >
+    update direction_info
+    <set >
+      <if test="dirName != null" >
+        dir_name = #{dirName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where did = #{did,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yi.entity.DirectionInfo" >
+    update direction_info
+    set dir_name = #{dirName,jdbcType=VARCHAR}
+    where did = #{did,jdbcType=INTEGER}
+  </update>
+</mapper>
