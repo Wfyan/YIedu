@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yi.mapper.CrouseKindMapper" >
-  <resultMap id="BaseResultMap" type="com.yi.entity.CrouseKind" >
+<mapper namespace="com.yi.mapper.KindInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.yi.entity.KindInfo" >
     <id column="kid" property="kid" jdbcType="INTEGER" />
-    <result column="mid" property="mid" jdbcType="INTEGER" />
     <result column="kind_name" property="kindName" jdbcType="VARCHAR" />
+    <result column="higher_id" property="higherId" jdbcType="INTEGER" />
+    <result column="level" property="level" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -65,15 +66,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    kid, mid, kind_name
+    kid, kind_name, higher_id, level
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yi.entity.CrouseKindExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yi.entity.KindInfoExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from crouse_kind
+    from kind_info
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -84,67 +85,76 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from crouse_kind
+    from kind_info
     where kid = #{kid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from crouse_kind
+    delete from kind_info
     where kid = #{kid,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.yi.entity.CrouseKindExample" >
-    delete from crouse_kind
+  <delete id="deleteByExample" parameterType="com.yi.entity.KindInfoExample" >
+    delete from kind_info
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.yi.entity.CrouseKind" >
-    insert into crouse_kind (kid, mid, kind_name
-      )
-    values (#{kid,jdbcType=INTEGER}, #{mid,jdbcType=INTEGER}, #{kindName,jdbcType=VARCHAR}
-      )
+  <insert id="insert" parameterType="com.yi.entity.KindInfo" >
+    insert into kind_info (kid, kind_name, higher_id, 
+      level)
+    values (#{kid,jdbcType=INTEGER}, #{kindName,jdbcType=VARCHAR}, #{higherId,jdbcType=INTEGER}, 
+      #{level,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.yi.entity.CrouseKind" >
-    insert into crouse_kind
+  <insert id="insertSelective" parameterType="com.yi.entity.KindInfo" >
+    insert into kind_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="kid != null" >
         kid,
       </if>
-      <if test="mid != null" >
-        mid,
-      </if>
       <if test="kindName != null" >
         kind_name,
+      </if>
+      <if test="higherId != null" >
+        higher_id,
+      </if>
+      <if test="level != null" >
+        level,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="kid != null" >
         #{kid,jdbcType=INTEGER},
       </if>
-      <if test="mid != null" >
-        #{mid,jdbcType=INTEGER},
-      </if>
       <if test="kindName != null" >
         #{kindName,jdbcType=VARCHAR},
       </if>
+      <if test="higherId != null" >
+        #{higherId,jdbcType=INTEGER},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=INTEGER},
+      </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.yi.entity.CrouseKindExample" resultType="java.lang.Integer" >
-    select count(*) from crouse_kind
+  <select id="countByExample" parameterType="com.yi.entity.KindInfoExample" resultType="java.lang.Integer" >
+    select count(*) from kind_info
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update crouse_kind
+    update kind_info
     <set >
       <if test="record.kid != null" >
         kid = #{record.kid,jdbcType=INTEGER},
       </if>
-      <if test="record.mid != null" >
-        mid = #{record.mid,jdbcType=INTEGER},
-      </if>
       <if test="record.kindName != null" >
         kind_name = #{record.kindName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.higherId != null" >
+        higher_id = #{record.higherId,jdbcType=INTEGER},
+      </if>
+      <if test="record.level != null" >
+        level = #{record.level,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -152,30 +162,35 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update crouse_kind
+    update kind_info
     set kid = #{record.kid,jdbcType=INTEGER},
-      mid = #{record.mid,jdbcType=INTEGER},
-      kind_name = #{record.kindName,jdbcType=VARCHAR}
+      kind_name = #{record.kindName,jdbcType=VARCHAR},
+      higher_id = #{record.higherId,jdbcType=INTEGER},
+      level = #{record.level,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yi.entity.CrouseKind" >
-    update crouse_kind
+  <update id="updateByPrimaryKeySelective" parameterType="com.yi.entity.KindInfo" >
+    update kind_info
     <set >
-      <if test="mid != null" >
-        mid = #{mid,jdbcType=INTEGER},
-      </if>
       <if test="kindName != null" >
         kind_name = #{kindName,jdbcType=VARCHAR},
+      </if>
+      <if test="higherId != null" >
+        higher_id = #{higherId,jdbcType=INTEGER},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=INTEGER},
       </if>
     </set>
     where kid = #{kid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yi.entity.CrouseKind" >
-    update crouse_kind
-    set mid = #{mid,jdbcType=INTEGER},
-      kind_name = #{kindName,jdbcType=VARCHAR}
+  <update id="updateByPrimaryKey" parameterType="com.yi.entity.KindInfo" >
+    update kind_info
+    set kind_name = #{kindName,jdbcType=VARCHAR},
+      higher_id = #{higherId,jdbcType=INTEGER},
+      level = #{level,jdbcType=INTEGER}
     where kid = #{kid,jdbcType=INTEGER}
   </update>
 </mapper>

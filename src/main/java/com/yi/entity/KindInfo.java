@@ -1,11 +1,13 @@
 package com.yi.entity;
 
-public class CrouseKind {
+public class KindInfo {
     private Integer kid;
 
-    private Integer mid;
-
     private String kindName;
+
+    private Integer higherId;
+
+    private Integer level;
 
     public Integer getKid() {
         return kid;
@@ -15,19 +17,27 @@ public class CrouseKind {
         this.kid = kid;
     }
 
-    public Integer getMid() {
-        return mid;
-    }
-
-    public void setMid(Integer mid) {
-        this.mid = mid;
-    }
-
     public String getKindName() {
         return kindName;
     }
 
     public void setKindName(String kindName) {
         this.kindName = kindName == null ? null : kindName.trim();
+    }
+
+    public Integer getHigherId() {
+        return higherId;
+    }
+
+    public void setHigherId(Integer higherId) {
+        this.higherId = higherId;
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
     }
 }
