@@ -1,22 +1,22 @@
 package com.yi.mapper;
 
-import com.yi.entity.Manager;
+import com.yi.entity.TbManager;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class ManagerDaoTest extends BaseTest {
 
     @Autowired
-    private ManagerMapper managerMapper;
+    private TbManagerMapper managerMapper;
 
     @Test
     public void testInsertManager() throws Exception {
-        int id = 2;
+        int id = 1;
         int roleId = 1;
         String name = "管理员1";
         String password = "1234";
 
-        Manager manager = new Manager();
+        TbManager manager = new TbManager();
         manager.setId(id);
         manager.setRoleId(roleId);
         manager.setName(name);
@@ -28,8 +28,8 @@ public class ManagerDaoTest extends BaseTest {
 
     @Test
     public void testQueryById() throws Exception{
-        int id = 0;
-        Manager manager = managerMapper.selectByPrimaryKey(id);
+        int id = 1;
+        TbManager manager =managerMapper.selectByPrimaryKey(id);
         System.out.println(manager.getName());
     }
 
