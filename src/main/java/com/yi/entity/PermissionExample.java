@@ -164,76 +164,6 @@ public class PermissionExample {
             return (Criteria) this;
         }
 
-        public Criteria andNameIsNull() {
-            addCriterion("name is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameIsNotNull() {
-            addCriterion("name is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameEqualTo(String value) {
-            addCriterion("name =", value, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameNotEqualTo(String value) {
-            addCriterion("name <>", value, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameGreaterThan(String value) {
-            addCriterion("name >", value, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameGreaterThanOrEqualTo(String value) {
-            addCriterion("name >=", value, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameLessThan(String value) {
-            addCriterion("name <", value, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameLessThanOrEqualTo(String value) {
-            addCriterion("name <=", value, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameLike(String value) {
-            addCriterion("name like", value, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameNotLike(String value) {
-            addCriterion("name not like", value, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameIn(List<String> values) {
-            addCriterion("name in", values, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameNotIn(List<String> values) {
-            addCriterion("name not in", values, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameBetween(String value1, String value2) {
-            addCriterion("name between", value1, value2, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameNotBetween(String value1, String value2) {
-            addCriterion("name not between", value1, value2, "name");
-            return (Criteria) this;
-        }
-
         public Criteria andUrlIsNull() {
             addCriterion("url is null");
             return (Criteria) this;
@@ -511,6 +441,76 @@ public class PermissionExample {
 
         public Criteria andParenttitleNotBetween(String value1, String value2) {
             addCriterion("parenttitle not between", value1, value2, "parenttitle");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirNameIsNull() {
+            addCriterion("dir_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirNameIsNotNull() {
+            addCriterion("dir_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirNameEqualTo(String value) {
+            addCriterion("dir_name =", value, "dirName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirNameNotEqualTo(String value) {
+            addCriterion("dir_name <>", value, "dirName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirNameGreaterThan(String value) {
+            addCriterion("dir_name >", value, "dirName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirNameGreaterThanOrEqualTo(String value) {
+            addCriterion("dir_name >=", value, "dirName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirNameLessThan(String value) {
+            addCriterion("dir_name <", value, "dirName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirNameLessThanOrEqualTo(String value) {
+            addCriterion("dir_name <=", value, "dirName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirNameLike(String value) {
+            addCriterion("dir_name like", value, "dirName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirNameNotLike(String value) {
+            addCriterion("dir_name not like", value, "dirName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirNameIn(List<String> values) {
+            addCriterion("dir_name in", values, "dirName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirNameNotIn(List<String> values) {
+            addCriterion("dir_name not in", values, "dirName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirNameBetween(String value1, String value2) {
+            addCriterion("dir_name between", value1, value2, "dirName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirNameNotBetween(String value1, String value2) {
+            addCriterion("dir_name not between", value1, value2, "dirName");
             return (Criteria) this;
         }
     }

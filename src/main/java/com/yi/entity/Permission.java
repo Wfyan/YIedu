@@ -3,8 +3,6 @@ package com.yi.entity;
 public class Permission {
     private Integer permissionId;
 
-    private String name;
-
     private String url;
 
     private String title;
@@ -13,20 +11,14 @@ public class Permission {
 
     private String parenttitle;
 
+    private String dirName;
+
     public Integer getPermissionId() {
         return permissionId;
     }
 
     public void setPermissionId(Integer permissionId) {
         this.permissionId = permissionId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
     }
 
     public String getUrl() {
@@ -59,5 +51,13 @@ public class Permission {
 
     public void setParenttitle(String parenttitle) {
         this.parenttitle = parenttitle == null ? null : parenttitle.trim();
+    }
+
+    public String getDirName() {
+        return dirName;
+    }
+
+    public void setDirName(String dirName) {
+        this.dirName = dirName == null ? null : dirName.trim();
     }
 }
