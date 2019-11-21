@@ -1,6 +1,7 @@
 package com.yi.entity;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class TbAuthsInfoExample {
@@ -561,6 +562,66 @@ public class TbAuthsInfoExample {
 
         public Criteria andIfverifiedNotBetween(Boolean value1, Boolean value2) {
             addCriterion("ifverified not between", value1, value2, "ifverified");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddtimeIsNull() {
+            addCriterion("addtime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddtimeIsNotNull() {
+            addCriterion("addtime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddtimeEqualTo(Date value) {
+            addCriterion("addtime =", value, "addtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddtimeNotEqualTo(Date value) {
+            addCriterion("addtime <>", value, "addtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddtimeGreaterThan(Date value) {
+            addCriterion("addtime >", value, "addtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddtimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("addtime >=", value, "addtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddtimeLessThan(Date value) {
+            addCriterion("addtime <", value, "addtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddtimeLessThanOrEqualTo(Date value) {
+            addCriterion("addtime <=", value, "addtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddtimeIn(List<Date> values) {
+            addCriterion("addtime in", values, "addtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddtimeNotIn(List<Date> values) {
+            addCriterion("addtime not in", values, "addtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddtimeBetween(Date value1, Date value2) {
+            addCriterion("addtime between", value1, value2, "addtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddtimeNotBetween(Date value1, Date value2) {
+            addCriterion("addtime not between", value1, value2, "addtime");
             return (Criteria) this;
         }
     }

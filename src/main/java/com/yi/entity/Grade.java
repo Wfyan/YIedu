@@ -1,6 +1,7 @@
 package com.yi.entity;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class Grade {
     private Integer scid;
@@ -12,6 +13,8 @@ public class Grade {
     private Integer grades;
 
     private BigDecimal isdual;
+
+    private Date addtime;
 
     public Integer getScid() {
         return scid;
@@ -51,5 +54,13 @@ public class Grade {
 
     public void setIsdual(BigDecimal isdual) {
         this.isdual = isdual;
+    }
+
+    public Date getAddtime() {
+        return addtime;
+    }
+
+    public void setAddtime(Date addtime) {
+        this.addtime = addtime;
     }
 }

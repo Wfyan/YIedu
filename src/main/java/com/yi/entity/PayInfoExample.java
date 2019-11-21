@@ -142,52 +142,62 @@ public class PayInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andPayIdEqualTo(Integer value) {
+        public Criteria andPayIdEqualTo(String value) {
             addCriterion("pay_id =", value, "payId");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdNotEqualTo(Integer value) {
+        public Criteria andPayIdNotEqualTo(String value) {
             addCriterion("pay_id <>", value, "payId");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdGreaterThan(Integer value) {
+        public Criteria andPayIdGreaterThan(String value) {
             addCriterion("pay_id >", value, "payId");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdGreaterThanOrEqualTo(Integer value) {
+        public Criteria andPayIdGreaterThanOrEqualTo(String value) {
             addCriterion("pay_id >=", value, "payId");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdLessThan(Integer value) {
+        public Criteria andPayIdLessThan(String value) {
             addCriterion("pay_id <", value, "payId");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdLessThanOrEqualTo(Integer value) {
+        public Criteria andPayIdLessThanOrEqualTo(String value) {
             addCriterion("pay_id <=", value, "payId");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdIn(List<Integer> values) {
+        public Criteria andPayIdLike(String value) {
+            addCriterion("pay_id like", value, "payId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayIdNotLike(String value) {
+            addCriterion("pay_id not like", value, "payId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayIdIn(List<String> values) {
             addCriterion("pay_id in", values, "payId");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdNotIn(List<Integer> values) {
+        public Criteria andPayIdNotIn(List<String> values) {
             addCriterion("pay_id not in", values, "payId");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdBetween(Integer value1, Integer value2) {
+        public Criteria andPayIdBetween(String value1, String value2) {
             addCriterion("pay_id between", value1, value2, "payId");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdNotBetween(Integer value1, Integer value2) {
+        public Criteria andPayIdNotBetween(String value1, String value2) {
             addCriterion("pay_id not between", value1, value2, "payId");
             return (Criteria) this;
         }

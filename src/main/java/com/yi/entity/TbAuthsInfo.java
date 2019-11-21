@@ -1,5 +1,7 @@
 package com.yi.entity;
 
+import java.util.Date;
+
 public class TbAuthsInfo {
     private Integer id;
 
@@ -14,6 +16,8 @@ public class TbAuthsInfo {
     private String certificate;
 
     private Boolean ifverified;
+
+    private Date addtime;
 
     public Integer getId() {
         return id;
@@ -69,5 +73,13 @@ public class TbAuthsInfo {
 
     public void setIfverified(Boolean ifverified) {
         this.ifverified = ifverified;
+    }
+
+    public Date getAddtime() {
+        return addtime;
+    }
+
+    public void setAddtime(Date addtime) {
+        this.addtime = addtime;
     }
 }

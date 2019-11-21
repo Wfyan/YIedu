@@ -1,7 +1,9 @@
 package com.yi.entity;
 
+import java.util.Date;
+
 public class OrderInfo {
-    private Integer orderId;
+    private String orderId;
 
     private String stuid;
 
@@ -11,12 +13,14 @@ public class OrderInfo {
 
     private Integer onpay;
 
-    public Integer getOrderId() {
+    private Date addtime;
+
+    public String getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId == null ? null : orderId.trim();
     }
 
     public String getStuid() {
@@ -49,5 +53,13 @@ public class OrderInfo {
 
     public void setOnpay(Integer onpay) {
         this.onpay = onpay;
+    }
+
+    public Date getAddtime() {
+        return addtime;
+    }
+
+    public void setAddtime(Date addtime) {
+        this.addtime = addtime;
     }
 }

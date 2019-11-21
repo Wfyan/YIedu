@@ -1,6 +1,7 @@
 package com.yi.entity;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class CrouseInfoExample {
@@ -434,62 +435,52 @@ public class CrouseInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andAddDayEqualTo(String value) {
+        public Criteria andAddDayEqualTo(Date value) {
             addCriterion("add_day =", value, "addDay");
             return (Criteria) this;
         }
 
-        public Criteria andAddDayNotEqualTo(String value) {
+        public Criteria andAddDayNotEqualTo(Date value) {
             addCriterion("add_day <>", value, "addDay");
             return (Criteria) this;
         }
 
-        public Criteria andAddDayGreaterThan(String value) {
+        public Criteria andAddDayGreaterThan(Date value) {
             addCriterion("add_day >", value, "addDay");
             return (Criteria) this;
         }
 
-        public Criteria andAddDayGreaterThanOrEqualTo(String value) {
+        public Criteria andAddDayGreaterThanOrEqualTo(Date value) {
             addCriterion("add_day >=", value, "addDay");
             return (Criteria) this;
         }
 
-        public Criteria andAddDayLessThan(String value) {
+        public Criteria andAddDayLessThan(Date value) {
             addCriterion("add_day <", value, "addDay");
             return (Criteria) this;
         }
 
-        public Criteria andAddDayLessThanOrEqualTo(String value) {
+        public Criteria andAddDayLessThanOrEqualTo(Date value) {
             addCriterion("add_day <=", value, "addDay");
             return (Criteria) this;
         }
 
-        public Criteria andAddDayLike(String value) {
-            addCriterion("add_day like", value, "addDay");
-            return (Criteria) this;
-        }
-
-        public Criteria andAddDayNotLike(String value) {
-            addCriterion("add_day not like", value, "addDay");
-            return (Criteria) this;
-        }
-
-        public Criteria andAddDayIn(List<String> values) {
+        public Criteria andAddDayIn(List<Date> values) {
             addCriterion("add_day in", values, "addDay");
             return (Criteria) this;
         }
 
-        public Criteria andAddDayNotIn(List<String> values) {
+        public Criteria andAddDayNotIn(List<Date> values) {
             addCriterion("add_day not in", values, "addDay");
             return (Criteria) this;
         }
 
-        public Criteria andAddDayBetween(String value1, String value2) {
+        public Criteria andAddDayBetween(Date value1, Date value2) {
             addCriterion("add_day between", value1, value2, "addDay");
             return (Criteria) this;
         }
 
-        public Criteria andAddDayNotBetween(String value1, String value2) {
+        public Criteria andAddDayNotBetween(Date value1, Date value2) {
             addCriterion("add_day not between", value1, value2, "addDay");
             return (Criteria) this;
         }
@@ -811,6 +802,76 @@ public class CrouseInfoExample {
 
         public Criteria andCrouseIntroduceNotBetween(String value1, String value2) {
             addCriterion("crouse_introduce not between", value1, value2, "crouseIntroduce");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgIsNull() {
+            addCriterion("img is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgIsNotNull() {
+            addCriterion("img is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgEqualTo(String value) {
+            addCriterion("img =", value, "img");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgNotEqualTo(String value) {
+            addCriterion("img <>", value, "img");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgGreaterThan(String value) {
+            addCriterion("img >", value, "img");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgGreaterThanOrEqualTo(String value) {
+            addCriterion("img >=", value, "img");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgLessThan(String value) {
+            addCriterion("img <", value, "img");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgLessThanOrEqualTo(String value) {
+            addCriterion("img <=", value, "img");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgLike(String value) {
+            addCriterion("img like", value, "img");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgNotLike(String value) {
+            addCriterion("img not like", value, "img");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgIn(List<String> values) {
+            addCriterion("img in", values, "img");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgNotIn(List<String> values) {
+            addCriterion("img not in", values, "img");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgBetween(String value1, String value2) {
+            addCriterion("img between", value1, value2, "img");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgNotBetween(String value1, String value2) {
+            addCriterion("img not between", value1, value2, "img");
             return (Criteria) this;
         }
     }
