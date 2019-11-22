@@ -1,109 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yi.mapper.OrderInfoMapper" >
+<mapper namespace="com.yi.inter.OrderInfoMapper" >
   <resultMap id="BaseResultMap" type="com.yi.entity.OrderInfo" >
-    <id column="order_id" property="orderId" jdbcType="INTEGER" />
+    <id column="order_id" property="orderId" jdbcType="VARCHAR" />
     <result column="stuid" property="stuid" jdbcType="VARCHAR" />
     <result column="cid" property="cid" jdbcType="INTEGER" />
     <result column="price" property="price" jdbcType="DOUBLE" />
     <result column="onpay" property="onpay" jdbcType="INTEGER" />
+    <result column="addtime" property="addtime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <sql id="Example_Where_Clause" >
-    <where >
-      <foreach collection="oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause" >
-    <where >
-      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
   <sql id="Base_Column_List" >
-    order_id, stuid, cid, price, onpay
+    order_id, stuid, cid, price, onpay, addtime
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yi.entity.OrderInfoExample" >
-    select
-    <if test="distinct" >
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from order_info
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
     from order_info
-    where order_id = #{orderId,jdbcType=INTEGER}
+    where order_id = #{orderId,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from order_info
-    where order_id = #{orderId,jdbcType=INTEGER}
-  </delete>
-  <delete id="deleteByExample" parameterType="com.yi.entity.OrderInfoExample" >
-    delete from order_info
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
+    where order_id = #{orderId,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.yi.entity.OrderInfo" >
     insert into order_info (order_id, stuid, cid, 
-      price, onpay)
-    values (#{orderId,jdbcType=INTEGER}, #{stuid,jdbcType=VARCHAR}, #{cid,jdbcType=INTEGER}, 
-      #{price,jdbcType=DOUBLE}, #{onpay,jdbcType=INTEGER})
+      price, onpay, addtime
+      )
+    values (#{orderId,jdbcType=VARCHAR}, #{stuid,jdbcType=VARCHAR}, #{cid,jdbcType=INTEGER}, 
+      #{price,jdbcType=DOUBLE}, #{onpay,jdbcType=INTEGER}, #{addtime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.yi.entity.OrderInfo" >
     insert into order_info
@@ -123,10 +48,13 @@
       <if test="onpay != null" >
         onpay,
       </if>
+      <if test="addtime != null" >
+        addtime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="orderId != null" >
-        #{orderId,jdbcType=INTEGER},
+        #{orderId,jdbcType=VARCHAR},
       </if>
       <if test="stuid != null" >
         #{stuid,jdbcType=VARCHAR},
@@ -140,48 +68,11 @@
       <if test="onpay != null" >
         #{onpay,jdbcType=INTEGER},
       </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=TIMESTAMP},
+      </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.yi.entity.OrderInfoExample" resultType="java.lang.Integer" >
-    select count(*) from order_info
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map" >
-    update order_info
-    <set >
-      <if test="record.orderId != null" >
-        order_id = #{record.orderId,jdbcType=INTEGER},
-      </if>
-      <if test="record.stuid != null" >
-        stuid = #{record.stuid,jdbcType=VARCHAR},
-      </if>
-      <if test="record.cid != null" >
-        cid = #{record.cid,jdbcType=INTEGER},
-      </if>
-      <if test="record.price != null" >
-        price = #{record.price,jdbcType=DOUBLE},
-      </if>
-      <if test="record.onpay != null" >
-        onpay = #{record.onpay,jdbcType=INTEGER},
-      </if>
-    </set>
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map" >
-    update order_info
-    set order_id = #{record.orderId,jdbcType=INTEGER},
-      stuid = #{record.stuid,jdbcType=VARCHAR},
-      cid = #{record.cid,jdbcType=INTEGER},
-      price = #{record.price,jdbcType=DOUBLE},
-      onpay = #{record.onpay,jdbcType=INTEGER}
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.yi.entity.OrderInfo" >
     update order_info
     <set >
@@ -197,15 +88,19 @@
       <if test="onpay != null" >
         onpay = #{onpay,jdbcType=INTEGER},
       </if>
+      <if test="addtime != null" >
+        addtime = #{addtime,jdbcType=TIMESTAMP},
+      </if>
     </set>
-    where order_id = #{orderId,jdbcType=INTEGER}
+    where order_id = #{orderId,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.yi.entity.OrderInfo" >
     update order_info
     set stuid = #{stuid,jdbcType=VARCHAR},
       cid = #{cid,jdbcType=INTEGER},
       price = #{price,jdbcType=DOUBLE},
-      onpay = #{onpay,jdbcType=INTEGER}
-    where order_id = #{orderId,jdbcType=INTEGER}
+      onpay = #{onpay,jdbcType=INTEGER},
+      addtime = #{addtime,jdbcType=TIMESTAMP}
+    where order_id = #{orderId,jdbcType=VARCHAR}
   </update>
 </mapper>

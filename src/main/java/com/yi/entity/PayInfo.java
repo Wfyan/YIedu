@@ -3,7 +3,7 @@ package com.yi.entity;
 import java.util.Date;
 
 public class PayInfo {
-    private Integer payId;
+    private String payId;
 
     private Integer orderId;
 
@@ -15,12 +15,12 @@ public class PayInfo {
 
     private Date payTime;
 
-    public Integer getPayId() {
+    public String getPayId() {
         return payId;
     }
 
-    public void setPayId(Integer payId) {
-        this.payId = payId;
+    public void setPayId(String payId) {
+        this.payId = payId == null ? null : payId.trim();
     }
 
     public Integer getOrderId() {

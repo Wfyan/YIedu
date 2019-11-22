@@ -1,5 +1,7 @@
 package com.yi.entity;
 
+import java.util.Date;
+
 public class VideoInfo {
     private Integer vid;
 
@@ -7,7 +9,7 @@ public class VideoInfo {
 
     private String name;
 
-    private Integer time;
+    private Date time;
 
     private String onchoose;
 
@@ -37,11 +39,11 @@ public class VideoInfo {
         this.name = name == null ? null : name.trim();
     }
 
-    public Integer getTime() {
+    public Date getTime() {
         return time;
     }
 
-    public void setTime(Integer time) {
+    public void setTime(Date time) {
         this.time = time;
     }
 

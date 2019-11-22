@@ -1,5 +1,7 @@
 package com.yi.entity;
 
+import java.util.Date;
+
 public class CrouseInfo {
     private Integer cid;
 
@@ -11,7 +13,7 @@ public class CrouseInfo {
 
     private Float score;
 
-    private String addDay;
+    private Date addDay;
 
     private Integer crouseTime;
 
@@ -22,6 +24,8 @@ public class CrouseInfo {
     private String onchoose;
 
     private String crouseIntroduce;
+
+    private String img;
 
     public Integer getCid() {
         return cid;
@@ -63,12 +67,12 @@ public class CrouseInfo {
         this.score = score;
     }
 
-    public String getAddDay() {
+    public Date getAddDay() {
         return addDay;
     }
 
-    public void setAddDay(String addDay) {
-        this.addDay = addDay == null ? null : addDay.trim();
+    public void setAddDay(Date addDay) {
+        this.addDay = addDay;
     }
 
     public Integer getCrouseTime() {
@@ -109,5 +113,13 @@ public class CrouseInfo {
 
     public void setCrouseIntroduce(String crouseIntroduce) {
         this.crouseIntroduce = crouseIntroduce == null ? null : crouseIntroduce.trim();
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img == null ? null : img.trim();
     }
 }

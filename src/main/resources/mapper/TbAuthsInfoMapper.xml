@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yi.mapper.TbAuthsInfoMapper" >
+<mapper namespace="com.yi.inter.TbAuthsInfoMapper" >
   <resultMap id="BaseResultMap" type="com.yi.entity.TbAuthsInfo" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="stuid" property="stuid" jdbcType="VARCHAR" />
@@ -9,82 +9,11 @@
     <result column="indentifier" property="indentifier" jdbcType="VARCHAR" />
     <result column="certificate" property="certificate" jdbcType="VARCHAR" />
     <result column="ifverified" property="ifverified" jdbcType="BIT" />
+    <result column="addtime" property="addtime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <sql id="Example_Where_Clause" >
-    <where >
-      <foreach collection="oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause" >
-    <where >
-      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
   <sql id="Base_Column_List" >
-    id, stuid, state, identitytype, indentifier, certificate, ifverified
+    id, stuid, state, identitytype, indentifier, certificate, ifverified, addtime
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yi.entity.TbAuthsInfoExample" >
-    select
-    <if test="distinct" >
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from tb_auths_info
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
-    </if>
-  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -95,19 +24,13 @@
     delete from tb_auths_info
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.yi.entity.TbAuthsInfoExample" >
-    delete from tb_auths_info
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-  </delete>
   <insert id="insert" parameterType="com.yi.entity.TbAuthsInfo" >
     insert into tb_auths_info (id, stuid, state, 
       identitytype, indentifier, certificate, 
-      ifverified)
+      ifverified, addtime)
     values (#{id,jdbcType=INTEGER}, #{stuid,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, 
       #{identitytype,jdbcType=VARCHAR}, #{indentifier,jdbcType=VARCHAR}, #{certificate,jdbcType=VARCHAR}, 
-      #{ifverified,jdbcType=BIT})
+      #{ifverified,jdbcType=BIT}, #{addtime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.yi.entity.TbAuthsInfo" >
     insert into tb_auths_info
@@ -133,6 +56,9 @@
       <if test="ifverified != null" >
         ifverified,
       </if>
+      <if test="addtime != null" >
+        addtime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -156,56 +82,11 @@
       <if test="ifverified != null" >
         #{ifverified,jdbcType=BIT},
       </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=TIMESTAMP},
+      </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.yi.entity.TbAuthsInfoExample" resultType="java.lang.Integer" >
-    select count(*) from tb_auths_info
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map" >
-    update tb_auths_info
-    <set >
-      <if test="record.id != null" >
-        id = #{record.id,jdbcType=INTEGER},
-      </if>
-      <if test="record.stuid != null" >
-        stuid = #{record.stuid,jdbcType=VARCHAR},
-      </if>
-      <if test="record.state != null" >
-        state = #{record.state,jdbcType=INTEGER},
-      </if>
-      <if test="record.identitytype != null" >
-        identitytype = #{record.identitytype,jdbcType=VARCHAR},
-      </if>
-      <if test="record.indentifier != null" >
-        indentifier = #{record.indentifier,jdbcType=VARCHAR},
-      </if>
-      <if test="record.certificate != null" >
-        certificate = #{record.certificate,jdbcType=VARCHAR},
-      </if>
-      <if test="record.ifverified != null" >
-        ifverified = #{record.ifverified,jdbcType=BIT},
-      </if>
-    </set>
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map" >
-    update tb_auths_info
-    set id = #{record.id,jdbcType=INTEGER},
-      stuid = #{record.stuid,jdbcType=VARCHAR},
-      state = #{record.state,jdbcType=INTEGER},
-      identitytype = #{record.identitytype,jdbcType=VARCHAR},
-      indentifier = #{record.indentifier,jdbcType=VARCHAR},
-      certificate = #{record.certificate,jdbcType=VARCHAR},
-      ifverified = #{record.ifverified,jdbcType=BIT}
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.yi.entity.TbAuthsInfo" >
     update tb_auths_info
     <set >
@@ -227,6 +108,9 @@
       <if test="ifverified != null" >
         ifverified = #{ifverified,jdbcType=BIT},
       </if>
+      <if test="addtime != null" >
+        addtime = #{addtime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -237,7 +121,8 @@
       identitytype = #{identitytype,jdbcType=VARCHAR},
       indentifier = #{indentifier,jdbcType=VARCHAR},
       certificate = #{certificate,jdbcType=VARCHAR},
-      ifverified = #{ifverified,jdbcType=BIT}
+      ifverified = #{ifverified,jdbcType=BIT},
+      addtime = #{addtime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

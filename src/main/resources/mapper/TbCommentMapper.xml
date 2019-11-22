@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yi.mapper.TbCommentMapper" >
+<mapper namespace="com.yi.inter.TbCommentMapper" >
   <resultMap id="BaseResultMap" type="com.yi.entity.TbComment" >
     <id column="com_id" property="comId" jdbcType="INTEGER" />
     <result column="cid" property="cid" jdbcType="INTEGER" />
@@ -9,81 +9,9 @@
     <result column="com_time" property="comTime" jdbcType="TIMESTAMP" />
     <result column="state" property="state" jdbcType="INTEGER" />
   </resultMap>
-  <sql id="Example_Where_Clause" >
-    <where >
-      <foreach collection="oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause" >
-    <where >
-      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
   <sql id="Base_Column_List" >
     com_id, cid, stuid, content, com_time, state
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yi.entity.TbCommentExample" >
-    select
-    <if test="distinct" >
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from tb_comment
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
-    </if>
-  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -93,12 +21,6 @@
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from tb_comment
     where com_id = #{comId,jdbcType=INTEGER}
-  </delete>
-  <delete id="deleteByExample" parameterType="com.yi.entity.TbCommentExample" >
-    delete from tb_comment
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
   </delete>
   <insert id="insert" parameterType="com.yi.entity.TbComment" >
     insert into tb_comment (com_id, cid, stuid, 
@@ -151,50 +73,6 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.yi.entity.TbCommentExample" resultType="java.lang.Integer" >
-    select count(*) from tb_comment
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map" >
-    update tb_comment
-    <set >
-      <if test="record.comId != null" >
-        com_id = #{record.comId,jdbcType=INTEGER},
-      </if>
-      <if test="record.cid != null" >
-        cid = #{record.cid,jdbcType=INTEGER},
-      </if>
-      <if test="record.stuid != null" >
-        stuid = #{record.stuid,jdbcType=VARCHAR},
-      </if>
-      <if test="record.content != null" >
-        content = #{record.content,jdbcType=VARCHAR},
-      </if>
-      <if test="record.comTime != null" >
-        com_time = #{record.comTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.state != null" >
-        state = #{record.state,jdbcType=INTEGER},
-      </if>
-    </set>
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map" >
-    update tb_comment
-    set com_id = #{record.comId,jdbcType=INTEGER},
-      cid = #{record.cid,jdbcType=INTEGER},
-      stuid = #{record.stuid,jdbcType=VARCHAR},
-      content = #{record.content,jdbcType=VARCHAR},
-      com_time = #{record.comTime,jdbcType=TIMESTAMP},
-      state = #{record.state,jdbcType=INTEGER}
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.yi.entity.TbComment" >
     update tb_comment
     <set >
