@@ -2,102 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d878608b-50b4-4bd3-8cb8-f45ff30a0396" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yi/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yi/dto/LoginOk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yi/service/LoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yi/service/ManagerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yi/service/StudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yi/service/impl/LoginServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yi/service/impl/ManagerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yi/service/impl/StudentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yi/util/Result.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/CrouseInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/entity/CrouseInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/CrouseInfoExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/Grade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/entity/Grade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/GradeExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/KindInfoExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/OrderInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/entity/OrderInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/OrderInfoExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/PayInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/entity/PayInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/PayInfoExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/PermissionExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/RolePermissionExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/RolesExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/StuIntegralInfoExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/TbAuthsInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/entity/TbAuthsInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/TbAuthsInfoExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/TbCommentExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/TbManagerExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/TbReplyExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/TbStudentExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/TbTeacherExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/VideoInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/entity/VideoInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/entity/VideoInfoExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/mapper/CrouseInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/mapper/CrouseInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/mapper/GradeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/mapper/GradeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/mapper/KindInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/mapper/KindInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/mapper/OrderInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/mapper/OrderInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/mapper/PayInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/mapper/PayInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/mapper/PermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/mapper/PermissionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/mapper/RolePermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/mapper/RolePermissionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/mapper/RolesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/mapper/RolesMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/mapper/StuIntegralInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/mapper/StuIntegralInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/mapper/TbAuthsInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/mapper/TbAuthsInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/mapper/TbCommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/mapper/TbCommentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/mapper/TbManagerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/mapper/TbManagerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/mapper/TbReplyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/mapper/TbReplyMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/mapper/TbStudentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/mapper/TbStudentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/mapper/TbTeacherMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/mapper/TbTeacherMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yi/mapper/VideoInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yi/mapper/VideoInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CrouseInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CrouseInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/GradeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/GradeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/KindInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/KindInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrderInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PayInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PayInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PermissionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/RolePermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/RolePermissionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/RolesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/RolesMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/StuIntegralInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/StuIntegralInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TbAuthsInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbAuthsInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TbCommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbCommentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TbManagerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbManagerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TbReplyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbReplyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TbStudentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbStudentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TbTeacherMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbTeacherMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/VideoInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/VideoInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/CrouseInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/CrouseInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/CrouseInfoExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/CrouseInfoExample$Criteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/CrouseInfoExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/CrouseInfoExample$Criterion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/CrouseInfoExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/CrouseInfoExample$GeneratedCriteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/CrouseInfoExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/CrouseInfoExample.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/Grade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/Grade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/GradeExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/GradeExample$Criteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/GradeExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/GradeExample$Criterion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/GradeExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/GradeExample$GeneratedCriteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/GradeExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/GradeExample.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/OrderInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/OrderInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/OrderInfoExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/OrderInfoExample$Criteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/OrderInfoExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/OrderInfoExample$Criterion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/OrderInfoExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/OrderInfoExample$GeneratedCriteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/OrderInfoExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/OrderInfoExample.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/PayInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/PayInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/PayInfoExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/PayInfoExample$Criteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/PayInfoExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/PayInfoExample$Criterion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/PayInfoExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/PayInfoExample$GeneratedCriteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/TbAuthsInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/TbAuthsInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/TbAuthsInfoExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/TbAuthsInfoExample$Criteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/TbAuthsInfoExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/TbAuthsInfoExample$Criterion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/TbAuthsInfoExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/TbAuthsInfoExample$GeneratedCriteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/entity/TbAuthsInfoExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/entity/TbAuthsInfoExample.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/mapper/OrderInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/mapper/OrderInfoMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yi/mapper/PayInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yi/mapper/PayInfoMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CrouseInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/CrouseInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/GradeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/GradeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/OrderInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/OrderInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PayInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/PayInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/TbAuthsInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/TbAuthsInfoMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -115,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/yi/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+            <state relative-caret-position="208">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#605#606#0" expanded="true" />
@@ -448,7 +353,7 @@
       <workItem from="1574318488503" duration="4215000" />
       <workItem from="1574343514570" duration="2521000" />
       <workItem from="1574381941592" duration="817000" />
-      <workItem from="1574405276869" duration="9420000" />
+      <workItem from="1574405276869" duration="9795000" />
     </task>
     <servers />
   </component>
@@ -485,11 +390,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53085000" />
+    <option name="totallyTimeSpent" value="53460000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4967213" visible="true" weight="0.22163388" />
       <window_info id="Structure" order="1" sideWeight="0.502455" side_tool="true" weight="0.24508321" />
@@ -839,8 +743,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yi/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        <state relative-caret-position="208">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#605#606#0" expanded="true" />
